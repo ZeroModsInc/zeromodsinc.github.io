@@ -1,13 +1,69 @@
-<!--
-  The Zero Mods Website (currently https://zeromods.xyz/)
-      https://discord.gg/dPzJajt
-  - Lifix
--->
 <head>
 	<title>Zero Mods</title>
+	<link rel="shortcut icon" href="assets/favicon.png"/>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="assets/TrueLies.ttf">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800&amp;display=swap">
+	<script src="related-pages-script.js"></script>
+	<script src="team-script.js"></script>
 </head>
-<body>
-	<p>
-		Uh- oh... FUCK. SHIT. BITCH. YES SHECK WES AND I'M GETTING REALLY RICH.
-	</p>
+<body class="app">
+	<header class="navigation">
+		<div class="navigation-container">
+			<!-- Yes, this is lowercase; the uppercase letters are never used with True Lies in the Zero logo (it's been this way since the logo's creation, 2020) -->
+			<div class="zero-font">
+				zero
+			</div>
+			<nav class="navigation-nav">
+				<a href="#related-pages" aria-current="page">
+					Related Pages
+				</a>
+				<a href="https://discord.com/invite/dPzJajt" aria-current="page">
+					Discord
+				</a>
+				<a href="https://www.youtube.com/@ZeroModsXT" aria-current="page">
+					YouTube
+				</a>
+				<a href="https://github.com/ZeroModsInc" aria-current="page">
+					GitHub
+				</a>
+			</nav>
+		</div>
+	</header>
+	<div class="main">
+		<div class="main-title-container">
+			<div class="main-title-text-section">
+				<p class="main-title">
+					Welcome to<br/><span>Zero Mods</span>
+				</p>
+				<p class="main-subtitle">
+					The home of experimental, buggy software, but most importantly <span>games</span>. This site is currently under construction and is subject to change in the future.
+				</p>
+			</div>
+			<img src="assets/quotes/1.jpg" style="width: 50%;" />
+		</div>
+		<div id="related-pages">
+			<h4 class="section-title">
+				<span>Related Pages</span>
+			</h4>
+			<div id="related-pages-content" style="width:100%;display:flex;flex-direction:column;flex-wrap:wrap;justify-items:center;justify-content:center;align-items:center;">
+				<script>
+					InitialiseRelatedPagesData();
+				</script>
+			</div>
+		</div>
+		<div id="team">
+			<h4 class="section-title">
+				<span>Team</span>
+			</h4>
+			<script>
+				InitialiseTeamData();
+			</script>
+		</div>
+	</div>
+	<footer class="navigation">
+		<div class="navigation-nav" style="padding-bottom: 20px;">
+			Zero Mods, 2019 - 2024
+		</div>
+	</footer>
 </body>
