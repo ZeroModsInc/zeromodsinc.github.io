@@ -98,6 +98,17 @@ a {
 	color: #e74142;
 }
 
+.section-subtitle {
+	font-style: italic;
+	font-size: 18px;
+	text-align: center;
+	color: #aaa;
+}
+
+.section-subtitle span {
+	color: #e74142;
+}
+
 .related-page-badge {
 	background: #e741421f;
 	border-radius: 15px;
