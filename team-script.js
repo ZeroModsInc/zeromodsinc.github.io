@@ -8,7 +8,6 @@ const g_TeamData = {
 		"930943843048751145",
 		"1056203904280440884",
 		"750696921605210192",
-		"777925101869989890",
 		"1113927427937271889"
 	]
 };
@@ -27,11 +26,15 @@ async function InitialiseTeamData() {
 		var displayName = `@unknown`;
 		var avatarUrl = `https://cdn.discordapp.com/embed/avatars/${(parseInt(g_TeamData.users[x]) >> 22) % 6}.png?size=4096`; // this needs to be fixed but does it matter that much?
 
+		if (userData == null || userData == undefined) {
+			continue;
+		}
+
 		if (userData.hasOwnProperty("code") && userData.code == 10013 /* Unknown User */) {
 			console.log(`Couldn't find user \`${userId}\`.`);
 		} else {
-			displayName = `@${userData.username}`;
-			if (userData.avatar.id != null) {
+			displayName = `@${userData.hasOwnProperty("username") ? userData.username : "<unknown>"}`;
+			if (userData != null && userData.hasOwnProperty("avatar") && userData.avatar != null && userData.avatar.hasOwnProperty("id") && userData.avatar.id != null) {
 				avatarUrl = `https://cdn.discordapp.com/avatars/${userId}/${userData.avatar.id}.${userData.avatar.is_animated ? "gif" : "png"}?size=4096`;
 			}
 		}
