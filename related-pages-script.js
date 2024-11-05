@@ -1,16 +1,16 @@
 const g_RelatedPagesData = {
 	"pages": [
 		{
-			"link": "https://lifix.site/",
-			"display": "lifix.site"
-		},
-		{
-			"link": "https://childporn.wiki/",
-			"display": "childporn.wiki"
-		},
-		{
 			"link": "https://luxploit.net/",
 			"display": "luxploit.net"
+		},
+		{
+			"link": "https://gitlab.com/xifil/cod-all/",
+			"display": "xifil/cod-all 😉"
+		},
+		{
+			"link": "https://gitlab.com/xifil/t6-mod/",
+			"display": "xifil/t6-mod (Call of Duty®: Black Ops II)"
 		}
 	]
 }
