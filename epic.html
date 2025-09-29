@@ -1,0 +1,55 @@
+<!-- thank you chat gpt -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>prayer</title>
+    <style>
+      /* Remove all default spacing and prevent scrollbars */
+      html, body {
+        margin: 0;
+        height: 100%;
+        overflow: hidden;
+        background: #000; /* fallback behind transparent pixels */
+      }
+
+      /* Make the GIF fill the entire viewport while preserving aspect ratio */
+      #gif {
+        position: fixed;
+        inset: 0;           /* top:0; right:0; bottom:0; left:0 */
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;  /* cover the whole area; use 'contain' if you prefer letterboxing */
+        object-position: center;
+        display: block;
+      }
+
+      /* Optional: hide mouse cursor for kiosk-like display; comment out if not desired */
+      /* body { cursor: none; } */
+    </style>
+  </head>
+  <body>
+    <!-- Replace the src with your GIF file or pass ?src=URL in the address bar -->
+    <img id="gif" src="assets/higga.gif" alt="Full-window GIF" />
+
+    <script>
+      // Allow setting the GIF via URL: example index.html?src=path/to/loop.gif
+      const params = new URLSearchParams(location.search);
+      const srcParam = params.get('src');
+      if (srcParam) {
+        document.getElementById('gif').src = srcParam;
+      }
+
+      // Optional: click/tap to restart the GIF from frame 1 (works for most browsers)
+      document.getElementById('gif').addEventListener('click', function () {
+        const img = this;
+        const current = img.src;
+        // Cache-bust to force reload and restart
+        img.src = '';
+        // Small timeout ensures the DOM updates before reassigning
+        setTimeout(() => { img.src = current.split('#')[0] + '#restart=' + Date.now(); }, 0);
+      });
+    </script>
+  </body>
+</html>
